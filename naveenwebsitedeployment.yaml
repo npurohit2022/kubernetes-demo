@@ -1,0 +1,21 @@
+apiVersion: apps/v1  #API library of Kubernetes app/v1 or v1
+kind: Deployment # What we want to apply to Kubernetes cluster like Pod, Deployment, Service etc.
+metadata: #information regarding the deployment
+  name: naveenaws
+  labels:  #most important to idetify deployment in a cluster
+    app: web
+spec: #specification section.
+  replicas: 3
+  selector:
+   matchLabels:
+    app: web
+  template:
+   metadata:
+    name: naveenaws
+    labels:
+     app: web
+   spec:
+    containers:
+     - name: naveenaws
+       image: rsoftsysadmin/awswebsite
+    
