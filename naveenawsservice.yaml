@@ -5,9 +5,9 @@ metadata:
   labels:
     app: web
 spec: 
-   selector:
+   selector: # this selector should match with the labels of the Deployment file for Endpoint mapping.
      app: web
-   type: NodePort
+   type: NodePort # Type of service Nodeport or ClusterIP.
    ports:
      - port: 80
        targetPort: 80

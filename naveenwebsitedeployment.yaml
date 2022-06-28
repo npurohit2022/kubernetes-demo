@@ -4,18 +4,18 @@ metadata: #information regarding the deployment
   name: naveenaws
   labels:  #most important to idetify deployment in a cluster
     app: web
-spec: #specification section.
-  replicas: 3
-  selector:
+spec: #specification section for Deployment.
+  replicas: 3 # number of replicas for load balancing / fault tolerance
+  selector: # Selector block to match the label of Deployment with the underlying pod
    matchLabels:
-    app: web
-  template:
-   metadata:
+    app: web # this label should be same for both Deployment and Pod definition
+  template: #this template section is for the pod definition within a deployment
+   metadata: 
     name: naveenaws
     labels:
      app: web
-   spec:
-    containers:
+   spec: # specification section for Pod.
+    containers: # Container definition. 
      - name: naveenaws
        image: rsoftsysadmin/awswebsite
     
